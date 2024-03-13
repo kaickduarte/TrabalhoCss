@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .cadastroForm {
+            display: none;
+        }
+        .checkbox-container {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password">
+            <div class="checkbox-container">
+                <input type="checkbox" id="forgotPassword" name="forgotPassword">
+                <label for="forgotPassword">Esqueci minha senha</label>
+            </div>
+            <button type="button" onclick="login()">Entrar</button>
+        </form>
+    </div>
+
+    <div id="cadastroForm" class="cadastroForm">
+        <h2>Cadastro de Alunos</h2>
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome">
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" name="curso">
+        <label for="horarioInicio">Horário de Início:</label>
+        <input type="text" id="horarioInicio" name="horarioInicio">
+        <label for="horarioFim">Horário de Fim:</label>
+        <input type="text" id="horarioFim" name="horarioFim">
+        <button type="button" onclick="incluir()">Incluir</button>
+        <button type="button" onclick="excluir()">Excluir</button>
+        <button type="button" onclick="alterar()">Alterar</button>
+        <button type="button" onclick="consultar()">Consultar</button>
+    </div>
+</div>
+
+<script>
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var forgotPassword = document.getElementById("forgotPassword").checked;
+
+        // Verificar credenciais
+        if (username === "admin" && password === "admin") {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("cadastroForm").style.display = "block";
+        } else {
+            alert("Credenciais inválidas!");
+        }
+
+        if (forgotPassword) {
+            alert("Recuperar senha!");
+        }
+    }
+
+    function incluir() {
+        // Implementar lógica de inclusão
+        alert("Inclusão realizada!");
+    }
+
+    function excluir() {
+        // Implementar lógica de exclusão
+        alert("Exclusão realizada!");
+    }
+
+    function alterar() {
+        // Implementar lógica de alteração
+        alert("Alteração realizada!");
+    }
+
+    function consultar() {
+        // Implementar lógica de consulta
+        alert("Consulta realizada!");
+    }
+</script>
+
+</body>
+</html>
